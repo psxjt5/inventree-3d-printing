@@ -32,11 +32,12 @@ class ThreeDPrinterStatus(MachineStatus):
 
     CONNECTED = 100, _('Connected'), ColorEnum.primary
     DISCONNECTED = 101, _('Disconnected'), ColorEnum.danger
-    PRINTING = 200, _('Printing'), ColorEnum.primary
-    IDLE = 201, _('Idle'), ColorEnum.primary
-    FINISHED = 202, _('Finished'), ColorEnum.success
-    PAUSED = 203, _('Paused'), ColorEnum.success
-    FAILED = 204, _('Failed'), ColorEnum.danger
+    IDLE = 200, _('Idle'), ColorEnum.primary
+    PREPARING = 201, _('Preparing'), ColorEnum.primary
+    PRINTING = 202, _('Printing'), ColorEnum.primary
+    PAUSED = 203, _('Paused'), ColorEnum.secondary
+    FINISHED = 204, _('Finished'), ColorEnum.success
+    FAILED = 205, _('Failed'), ColorEnum.danger
     MISCONFIGURED = 998, _('Misconfigured'), ColorEnum.danger
     UNKNOWN = 999, _('Unknown'), ColorEnum.secondary
 
