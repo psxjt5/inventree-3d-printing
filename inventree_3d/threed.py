@@ -35,6 +35,7 @@ class ThreeDPrinterStatus(MachineStatus):
     PRINTING = 200, _('Printing'), ColorEnum.primary
     IDLE = 201, _('Idle'), ColorEnum.primary
     FINISHED = 202, _('Idle'), ColorEnum.success
+    PAUSED = 203, _('Idle'), ColorEnum.success
     WARNING = 300, _('Warning'), ColorEnum.warning
     ERROR = 301, _('Error'), ColorEnum.danger
     MISCONFIGURED = 998, _('Misconfigured'), ColorEnum.danger
