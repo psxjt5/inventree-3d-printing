@@ -34,9 +34,10 @@ class ThreeDPlugin(MachineDriverMixin, InvenTreePlugin):
     SLUG = "3d-printing"
     TITLE = "3D Printing Support"
 
-    def get_machine_drivers(self) -> list:
-        print("Registering 3D Printer Machine")
-        return [ThreeDPrinterBaseDriver]
+    # Individual machine drivers should register themselves, we don't want the base driver being registered.
+    # def get_machine_drivers(self) -> list:
+    #     print("Registering 3D Printer Machine")
+    #     return [ThreeDPrinterBaseDriver]
     
     def get_machine_types(self) -> list:
         print("Registering 3D Printer Type")
