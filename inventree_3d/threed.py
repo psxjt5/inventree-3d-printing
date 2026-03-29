@@ -30,10 +30,12 @@ class ThreeDPrinterStatus(MachineStatus):
         UNKNOWN: The printer status is unknown (e.g. there is no active connection to the printer)
     """
 
-    PRINTING = 100, _('Printing'), ColorEnum.success
-    IDLE = 101, _('Printing'), ColorEnum.primary
-    WARNING = 200, _('Warning'), ColorEnum.warning
-    ERROR = 201, _('Error'), ColorEnum.danger
+    CONNECTED = 100, _('Connected'), ColorEnum.primary
+    DISCONNECTED = 101, _('Disconnected'), ColorEnum.danger
+    PRINTING = 200, _('Printing'), ColorEnum.success
+    IDLE = 201, _('Idle'), ColorEnum.primary
+    WARNING = 300, _('Warning'), ColorEnum.warning
+    ERROR = 301, _('Error'), ColorEnum.danger
     MISCONFIGURED = 998, _('Misconfigured'), ColorEnum.danger
     UNKNOWN = 999, _('Unknown'), ColorEnum.secondary
 
