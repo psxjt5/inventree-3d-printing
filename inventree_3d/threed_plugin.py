@@ -40,7 +40,7 @@ class ThreeDPlugin(MachineDriverMixin, InvenTreePlugin):
     #     return [ThreeDPrinterBaseDriver]
     
     def get_machine_types(self) -> list:
-        print("Registering 3D Printer Type")
+        print("[Inventree-3D-Printing] Registering 3D Printer Type")
         return [ThreeDPrinterMachine]
 
 # threedPlugin
