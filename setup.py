@@ -22,7 +22,7 @@ setuptools.setup(
     version=inventree_3d.PLUGIN_VERSION,
     author="James Todd",
     author_email="james.todd@nottingham.ac.uk",
-    description="3D Printing Support for InvenTree",
+    description="3D Printing Machine Support for InvenTree",
     long_description=long_description,
     long_description_content_type="text/markdown",
     keywords="inventree 3d printer printing inventory",
