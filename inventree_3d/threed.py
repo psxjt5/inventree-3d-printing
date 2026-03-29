@@ -26,6 +26,7 @@ class ThreeDPrinterStatus(MachineStatus):
         IDLE: The printer is connected and waiting for a job
         WARNING: The printer is in an unknown warning condition
         ERROR: The printer is in an unknown error condition
+        MISCONFIGURED: The printer is missing required setting values
         UNKNOWN: The printer status is unknown (e.g. there is no active connection to the printer)
     """
 
@@ -33,6 +34,7 @@ class ThreeDPrinterStatus(MachineStatus):
     IDLE = 101, _('Printing'), ColorEnum.primary
     WARNING = 200, _('Warning'), ColorEnum.warning
     ERROR = 201, _('Error'), ColorEnum.danger
+    MISCONFIGURED = 998, _('Misconfigured'), ColorEnum.danger
     UNKNOWN = 999, _('Unknown'), ColorEnum.secondary
 
 class ThreeDPrinterMachine(BaseMachineType):
