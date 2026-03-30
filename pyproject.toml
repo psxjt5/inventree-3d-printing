@@ -14,4 +14,4 @@ exclude = [
     ".env",
 ]
 
-src=["inventree_brother"]
+src=["inventree_3d"]
