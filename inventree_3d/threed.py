@@ -22,6 +22,9 @@ class ThreeDPrinterStatus(MachineStatus):
     """3D printer status codes.
 
     Attributes:
+        CONNECTED: The connection test has succeeded (ping), but there's no gaurantee that MQTT is working yet.
+        DISCONNECTED: The connection test has failed (ping).
+
         PRINTING: The printer is currently printing a job
         IDLE: The printer is connected and waiting for a job
         WARNING: The printer is in an unknown warning condition
@@ -30,16 +33,29 @@ class ThreeDPrinterStatus(MachineStatus):
         UNKNOWN: The printer status is unknown (e.g. there is no active connection to the printer)
     """
 
-    CONNECTED = 100, _('Connected'), ColorEnum.primary
-    DISCONNECTED = 101, _('Disconnected'), ColorEnum.danger
-    IDLE = 200, _('Idle'), ColorEnum.primary
-    PREPARING = 201, _('Preparing'), ColorEnum.primary
-    PRINTING = 202, _('Printing'), ColorEnum.primary
-    PAUSED = 203, _('Paused'), ColorEnum.secondary
-    FINISHED = 204, _('Finished'), ColorEnum.success
-    FAILED = 205, _('Failed'), ColorEnum.danger
-    MISCONFIGURED = 998, _('Misconfigured'), ColorEnum.danger
-    UNKNOWN = 999, _('Unknown'), ColorEnum.secondary
+    """
+        1XX - Everything fine
+        2XX - Warnings (e.g. ink is about to become empty)
+        3XX - Something wrong with the machine (e.g. no labels are remaining on the spool)
+        4XX - Something wrong with the driver (e.g. cannot connect to the machine)
+        5XX - Unknown issues
+
+        https://docs.inventree.org/en/latest/plugins/machines/overview/#codes
+    """
+
+    IDLE = 101, _('Idle'), ColorEnum.primary
+    PREPARING = 102, _('Preparing'), ColorEnum.primary
+    PRINTING = 103, _('Printing'), ColorEnum.primary
+    PAUSED = 104, _('Paused'), ColorEnum.secondary
+    FINISHED = 105, _('Finished'), ColorEnum.success
+
+    CONNECTED = 300, _('Connected'), ColorEnum.primary
+    DISCONNECTED = 301, _('Disconnected'), ColorEnum.danger
+    FAILED = 302, _('Failed'), ColorEnum.danger
+    
+    MISCONFIGURED = 400, _('Misconfigured'), ColorEnum.danger
+
+    UNKNOWN = 500, _('Unknown'), ColorEnum.secondary
 
 class ThreeDPrinterMachine(BaseMachineType):
     """3D printer machine type."""
