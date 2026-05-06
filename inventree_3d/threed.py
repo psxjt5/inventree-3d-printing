@@ -22,7 +22,7 @@ class ThreeDPrinterStatus(MachineStatus):
     """3D printer status codes.
 
     Attributes:
-        CONNECTED: The connection test has succeeded (ping), but there's no gaurantee that MQTT is working yet.
+        CONNECTED: The connection test has succeeded (ping), but there's no guarantee that MQTT is working yet.
         DISCONNECTED: The connection test has failed (ping).
 
         PRINTING: The printer is currently printing a job
