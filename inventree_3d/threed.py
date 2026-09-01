@@ -43,19 +43,20 @@ class ThreeDPrinterStatus(MachineStatus):
         https://docs.inventree.org/en/latest/plugins/machines/overview/#codes
     """
 
-    IDLE = 101, _('Idle'), ColorEnum.primary
-    PREPARING = 102, _('Preparing'), ColorEnum.primary
-    PRINTING = 103, _('Printing'), ColorEnum.primary
-    PAUSED = 104, _('Paused'), ColorEnum.secondary
-    FINISHED = 105, _('Finished'), ColorEnum.success
+    IDLE = 101, _('Idle'), ColorEnum.primary                        # The printer is Idle (usually only when turned on)
+    PREPARING = 102, _('Preparing'), ColorEnum.primary              # The printer is preparing for a job (currently unused)
+    PRINTING = 103, _('Printing'), ColorEnum.primary                # The printer is currently printing a job
+    PAUSED = 104, _('Paused'), ColorEnum.secondary                  # The printer's job is currently paused
+    FINISHED = 105, _('Finished'), ColorEnum.success                # The printer has finished printing successfully
 
-    CONNECTED = 300, _('Connected'), ColorEnum.primary
-    DISCONNECTED = 301, _('Disconnected'), ColorEnum.danger
-    FAILED = 302, _('Failed'), ColorEnum.danger
+    CONNECTED = 300, _('Connected'), ColorEnum.primary              # The printer is reachable (state reported after a connection test, before MQTT has launched)
+    DISCONNECTED = 301, _('Disconnected'), ColorEnum.danger         # The connection test failed
+    FAILED = 302, _('Failed'), ColorEnum.danger                     # The print job failed
+    ERROR = 303, _('Error'), ColorEnum.danger                       # A printer error has occurred
     
-    MISCONFIGURED = 400, _('Misconfigured'), ColorEnum.danger
+    MISCONFIGURED = 400, _('Misconfigured'), ColorEnum.danger       # The printer's details have been misconfigured within InvenTree
 
-    UNKNOWN = 500, _('Unknown'), ColorEnum.secondary
+    UNKNOWN = 500, _('Unknown'), ColorEnum.secondary                # The state of the printer is unknown (MQTT connection made but state not yet received)
 
 class ThreeDPrinterMachine(BaseMachineType):
     """3D printer machine type."""
